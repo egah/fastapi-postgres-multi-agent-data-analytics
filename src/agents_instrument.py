@@ -63,7 +63,7 @@ class PostgresAgentInstruments(AgentInstruments):
 
         self.innovation_index = 0
 
-        if len(os.listdir(os.path.dirname( os.path.abspath(self.root_dir)))) > 10:
+        if len(os.listdir(os.path.dirname(os.path.abspath(self.root_dir)))) > 10:
             self.reset_files()
 
     def __enter__(self):
