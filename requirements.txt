@@ -56,8 +56,6 @@ nvidia-nvtx-cu12==12.1.105
 openai==0.28.0
 opt-einsum==3.3.0
 packaging==23.2
-# Editable install with no version control (postgres-multi-agent-data-analytics-base==0.1.0)
--e /home/epiphane/Documents/Projet/postgres-multi-agent-data-analytics-base
 protobuf==4.25.3
 psycopg2-binary==2.9.9
 pyautogen==0.1.14
