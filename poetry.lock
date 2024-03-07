@@ -133,17 +133,6 @@ test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypo
 trio = ["trio (>=0.23)"]
 
 [[package]]
-name = "argparse"
-version = "1.4.0"
-description = "Python command-line parsing library"
-optional = false
-python-versions = "*"
-files = [
-    {file = "argparse-1.4.0-py2.py3-none-any.whl", hash = "sha256:c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314"},
-    {file = "argparse-1.4.0.tar.gz", hash = "sha256:62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4"},
-]
-
-[[package]]
 name = "async-timeout"
 version = "4.0.3"
 description = "Timeout context manager for asyncio programs"
@@ -541,26 +530,6 @@ files = [
 
 [package.extras]
 speedup = ["python-levenshtein (>=0.12)"]
-
-[[package]]
-name = "gunicorn"
-version = "21.2.0"
-description = "WSGI HTTP Server for UNIX"
-optional = false
-python-versions = ">=3.5"
-files = [
-    {file = "gunicorn-21.2.0-py3-none-any.whl", hash = "sha256:3213aa5e8c24949e792bcacfc176fef362e7aac80b76c56f6b5122bf350722f0"},
-    {file = "gunicorn-21.2.0.tar.gz", hash = "sha256:88ec8bff1d634f98e61b9f65bc4bf3cd918a90806c6f5c48bc5603849ec81033"},
-]
-
-[package.dependencies]
-packaging = "*"
-
-[package.extras]
-eventlet = ["eventlet (>=0.24.1)"]
-gevent = ["gevent (>=1.4.0)"]
-setproctitle = ["setproctitle"]
-tornado = ["tornado (>=0.2)"]
 
 [[package]]
 name = "h11"
@@ -2217,4 +2186,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.12"
-content-hash = "f995257c6aaa38caf7536255de33d227b3c1b84afa1b02b6475765162543a271"
+content-hash = "39768dc9b6e8bedd6b20d19bed57ce218922ef87cf7409f58913db1d19fc619b"

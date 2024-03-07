@@ -9,7 +9,7 @@ ENV PORT=8000
 
 # Copy the requirements.txt file and install dependencies
 COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Copy the rest of the application into the container
 COPY . /app/

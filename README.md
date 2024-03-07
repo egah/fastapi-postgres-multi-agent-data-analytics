@@ -33,6 +33,8 @@ This project was build with :
 - Autogen
 - aider
 - docker
+- Postman
+- PostgreSQL
 
 ### Usage
 
