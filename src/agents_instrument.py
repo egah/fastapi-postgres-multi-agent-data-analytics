@@ -94,7 +94,7 @@ class PostgresAgentInstruments(AgentInstruments):
 
     @property
     def run_sql_results_file(self):
-        return os.path.join(self.root_dir,"run_sql_results.json")
+        return os.path.join(self.root_dir, "run_sql_results.json")
 
     # -------------------------- Agent Functions -------------------------- #
 
@@ -104,7 +104,7 @@ class PostgresAgentInstruments(AgentInstruments):
         """
         # execute la requête sql
         results_as_json = self.db.run_sql(sql)
-        
+
         # nom du fichier dans lequel le fichier est stocké
         fname = self.run_sql_results_file
 

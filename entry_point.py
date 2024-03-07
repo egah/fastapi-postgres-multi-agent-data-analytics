@@ -38,19 +38,14 @@ def get_api_key_func():
     return os.environ.get("OPENAI_API_KEY")
 
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hi, welcome to the API. Go to /docs to see the documentation."}
+
+
 @app.post("/generate_response/")
-def generate_response_from_prompt(
+async def generate_response_from_prompt(
     prompt: Prompt, api_key: str = Depends(get_api_key_func)
 ):
     response = generate_response(prompt.raw_prompt, prompt.postgres_url)
     return {"response": response}
-
-
-def main():
-    import uvicorn
-
-    uvicorn.run(app, host="127.0.0.1")
-
-
-if __name__ == "__main__":
-    main()
