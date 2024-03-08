@@ -59,13 +59,6 @@ async def generate_response_from_prompt(
     """
     This endpoint use the OpenAI ChatGPT completion endpoint 
     to transform natural language into a SQL query and return the query result.
-
-    Args:
-        prompt (Prompt): class with two attributes raw_prompt and postgres_url
-        openai_api_key (str, optional): Defaults to Body(None) : the api key for the openai api
-
-    Returns:
-        typing.Dict[str, typing.Any]: _description_
     """
     openai_api_key = get_api_key_func(openai_api_key)
     response = generate_response(prompt.raw_prompt, prompt.postgres_url, openai_api_key)
