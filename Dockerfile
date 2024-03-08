@@ -1,5 +1,5 @@
 # Use a base image with Python
-FROM python:3.10.3
+FROM python:3.10.3-slim
 
 # Set the working directory
 WORKDIR /app
@@ -9,7 +9,9 @@ ENV PORT=8000
 
 # Copy the requirements.txt file and install dependencies
 COPY requirements.txt /app/
-RUN pip install -r requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application into the container
 COPY . /app/

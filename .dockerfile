@@ -1,0 +1,15 @@
+.git
+.vscode
+.gitignore
+docker-compose.yml
+Linkedin.svg
+.env
+venv
+__pycache__
+pyproject.toml
+README.md
+runtime.txt
+poetry.lock
+*/__pycache__
+agent_results
+agent_results/*

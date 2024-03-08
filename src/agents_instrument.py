@@ -1,4 +1,5 @@
 import os
+import shutil
 
 from .db import PostgresManager
 
@@ -62,9 +63,11 @@ class PostgresAgentInstruments(AgentInstruments):
         self.complete_keyword = "APPROVED"
 
         self.innovation_index = 0
-
-        if len(os.listdir(os.path.dirname(os.path.abspath(self.root_dir)))) > 10:
-            self.reset_files()
+        base_dir = os.path.abspath(BASE_DIR)
+    
+        if len(os.listdir(base_dir)) > 5:
+            for filname in os.listdir(base_dir):
+                shutil.rmtree(os.path.join(base_dir, filname))
 
     def __enter__(self):
         self.reset_files()

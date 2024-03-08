@@ -23,6 +23,7 @@ class Orchestrator:
         self.instruments = instruments
         self.chats: List[Chat] = []
         self.validate_results_func: callable = validate_results_func
+        self.engineer_query = None
 
         if len(self.agents) < 2:
             raise Exception("Orchestrator needs at least two agents")
@@ -120,6 +121,9 @@ class Orchestrator:
         reply = agent_b.generate_reply(sender=agent_a)
 
         self.add_message(reply)
+
+        if agent_a.name == "Engineer":
+            self.engineer_query = json.loads(reply["function_call"]["arguments"])["sql"]
 
         print(f"basic_chat(): replied with:", reply)
 
