@@ -17,17 +17,13 @@ from src.agents_instrument import PostgresAgentInstruments
 BASE_DIR = "/" + "/".join((Path(__file__).resolve().parent.parent.parts)[1:])
 sys.path.append(BASE_DIR)
 
-dotenv.load_dotenv(os.path.join(BASE_DIR, ".env"))
-
-OPENAI_API_KEY: str = os.environ.get("OPENAI_API_KEY")
-
 PROMPT_TABLES_DEFINITIONS = "TABLE_DEFINITIONS"
 
 
 def generate_response(
     raw_prompt: str, 
     db_url: str,
-    openai_api_key: str = OPENAI_API_KEY
+    openai_api_key: str
 ):
 
     prompt = f"Fulfill this database query: {raw_prompt}. "
@@ -90,6 +86,7 @@ def generate_response(
                     "orchestration_status": "success",
                     "request_cost": data_eng_cost,
                     "number_of_tokens": data_eng_tokens,
+                    "query": data_eng_orchestrator.engineer_query,
                     "query_result": result,
                     "orchestrator_name": data_eng_orchestrator.name,
                 }

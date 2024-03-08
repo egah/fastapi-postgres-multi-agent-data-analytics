@@ -1,0 +1,9 @@
+version "3"
+
+services:
+  web:
+  build:
+    context: .
+  command: sh -c "uvicorn entry_point:app --reload --port=$PORT --host=0.0.0.0"
+  ports:
+    - "8000:8000"

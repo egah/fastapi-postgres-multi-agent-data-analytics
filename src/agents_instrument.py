@@ -1,4 +1,5 @@
 import os
+import shutil
 
 from .db import PostgresManager
 
@@ -62,9 +63,11 @@ class PostgresAgentInstruments(AgentInstruments):
         self.complete_keyword = "APPROVED"
 
         self.innovation_index = 0
-
-        if len(os.listdir(os.path.dirname( os.path.abspath(self.root_dir)))) > 10:
-            self.reset_files()
+        base_dir = os.path.abspath(BASE_DIR)
+    
+        if len(os.listdir(base_dir)) > 5:
+            for filname in os.listdir(base_dir):
+                shutil.rmtree(os.path.join(base_dir, filname))
 
     def __enter__(self):
         self.reset_files()
@@ -94,7 +97,7 @@ class PostgresAgentInstruments(AgentInstruments):
 
     @property
     def run_sql_results_file(self):
-        return os.path.join(self.root_dir,"run_sql_results.json")
+        return os.path.join(self.root_dir, "run_sql_results.json")
 
     # -------------------------- Agent Functions -------------------------- #
 
@@ -104,7 +107,7 @@ class PostgresAgentInstruments(AgentInstruments):
         """
         # execute la requête sql
         results_as_json = self.db.run_sql(sql)
-        
+
         # nom du fichier dans lequel le fichier est stocké
         fname = self.run_sql_results_file
 

@@ -1,0 +1,22 @@
+[
+    {
+        "country": "Egypt",
+        "president": "Abdel Fattah el-Sisi",
+        "prime_minister": "Sherif Ismail"
+    },
+    {
+        "country": "Portugal",
+        "president": "Marcelo Rebelo de Sousa",
+        "prime_minister": "Antonio Costa"
+    },
+    {
+        "country": "Vietnam",
+        "president": "Tran Dai Quang",
+        "prime_minister": "Nguyen Xuan Phuc"
+    },
+    {
+        "country": "Haiti",
+        "president": "Jovenel Moise",
+        "prime_minister": "Jack Guy Lafontant"
+    }
+]
